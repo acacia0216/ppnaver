@@ -1,4 +1,4 @@
-package ppNaver;
+package kr.co.pp.connection_manager;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;

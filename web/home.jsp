@@ -13,8 +13,7 @@
 <body>
 <h1 align="center">메인페이지</h1>
 <div align="center"><img src="./img/dogdog.jpg"></div>
-<div align="center"><a href="./controller?cmd=join">회원가입</a>&nbsp;&nbsp;<a href="./controller?cmd=login_page">로그인</a>&nbsp;&nbsp;<a href="./controller?cmd=logout">로그아웃</a></div>
-<div align="center"><a href="./controller?cmd=edit_page">회원정보 수정</a>&nbsp;&nbsp;<a href="./controller?cmd=delete_member_page">회원 탈퇴</a></div>
-
+<div align="center"><a href="./regist.do">회원가입</a>&nbsp;&nbsp;<a href="./controller?cmd=login_page">로그인</a>&nbsp;&nbsp;<a href="./controller?cmd=logout">로그아웃</a></div>
+<div align="center"><a href="./edit1.do">회원정보 수정</a>&nbsp;&nbsp;<a href="./delete.do">회원 탈퇴</a></div>
 </body>
 </html>

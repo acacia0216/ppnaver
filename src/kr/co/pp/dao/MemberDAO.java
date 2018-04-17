@@ -1,7 +1,9 @@
-package ppNaver;
+package kr.co.pp.dao;
+
+import kr.co.pp.connection_manager.ConnectionManager;
+import kr.co.pp.vo.MemberVO;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class MemberDAO {
     public boolean insert(MemberVO vo){
@@ -103,7 +105,9 @@ public class MemberDAO {
             pstmt = con.prepareStatement(sql);
             rs = pstmt.executeQuery();
             while(rs.next()) {
+                vo = new MemberVO();
                 System.out.println(rs.getString(1));
+
                 vo.setId(rs.getString(1));
                 vo.setPw(rs.getString(2));
                 vo.setName(rs.getString(3));
@@ -112,6 +116,7 @@ public class MemberDAO {
                 vo.setBirth(temp);
                 vo.setEmail(rs.getString(6));
                 vo.setHp(rs.getString(7));
+                System.out.println(id+"정보 호출완료");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -119,7 +124,7 @@ public class MemberDAO {
             mgr.connectionClose(rs,pstmt,con);
         }
 
-
+//
         return vo;
     }
 }

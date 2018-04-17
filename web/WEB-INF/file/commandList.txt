@@ -1,0 +1,6 @@
+/regist.do=kr.co.pp.handler.RegistHandler
+/search.do=kr.co.pp.handler.SearchHandler
+/edit1.do=kr.co.pp.handler.EditHandler1
+/edit2.do=kr.co.pp.handler.EditHandler2
+/edit3.do=kr.co.pp.handler.EditHandler3
+/delete.do=kr.co.pp.handler.DeleteHandler

@@ -1,4 +1,4 @@
-<%@ page import="ppNaver.MemberVO" %>
+<%@ page import="kr.co.pp.vo.MemberVO" %>
 <%@ page import="java.util.Random" %>
 <%@ page import="java.lang.reflect.Member" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -36,11 +36,11 @@
         var flag = false;
         if (val == "" || val == null) {
             document.getElementById("idempty").innerHTML = "필수 정보입니다.";
-        }else if(val != null){
+        } else if (val != null) {
             if (val.equals("admin")) {
                 document.getElementById("idempty").innerHTML = "이미 사용중이거나 탈퇴한 아이디입니다."
 
-            }else{
+            } else {
                 document.getElementById("idempty").innerHTML = "사용가능한 아이디입니다."
                 flag = true;
             }
@@ -52,7 +52,7 @@
         var flag = false;
         if (val == "" || val == null) {
             document.getElementById("pwempty").innerHTML = "필수 정보입니다.";
-        }else{
+        } else {
             flag = true;
         }
         return flag;
@@ -62,7 +62,7 @@
         var flag = false;
         if (val == "" || val == null) {
             document.getElementById("repwempty").innerHTML = "필수 정보입니다.";
-        }else{
+        } else {
             flag = true;
         }
         return flag;
@@ -72,7 +72,7 @@
         var flag = false;
         if (val == "" || val == null) {
             document.getElementById("nameempty").innerHTML = "필수 정보입니다.";
-        }else{
+        } else {
             flag = true;
         }
         return flag;
@@ -82,9 +82,9 @@
         var flag = false;
         if (val == "" || val == null) {
             document.getElementById("yearempty").innerHTML = "필수 정보입니다.";
-        }else if(val.length < 4){
+        } else if (val.length < 4) {
             document.getElementById("yearempty").innerHTML = "태어난 년도 4자리를 정확하게 입력하세요."
-        }else{
+        } else {
             flag = true;
         }
         return flag;
@@ -94,7 +94,7 @@
         var flag = false;
         if (val == "" || val == null) {
             document.getElementById("dayempty").innerHTML = "필수 정보입니다.";
-        }else{
+        } else {
             flag = true;
         }
         return flag;
@@ -104,7 +104,7 @@
         var flag = false;
         if (val == "" || val == null) {
             document.getElementById("hpempty").innerHTML = "필수 정보입니다.";
-        }else{
+        } else {
             flag = true;
         }
         return flag;
@@ -114,9 +114,9 @@
         var flag = false;
         if (val == "" || val == null) {
             document.getElementById("rehpempty").innerHTML = "필수 정보입니다.";
-        } else if(val.equals("1234")){
+        } else if (val.equals("1234")) {
             document.getElementById("rehpempty").innerHTML = "인증번호를 다시 확인해주세요."
-        }else{
+        } else {
             flag = true;
         }
         return flag;
@@ -131,21 +131,21 @@
         var flag = false;
 
         var id = document.getElementById("id_check").value;
-        alert('id='+id);
+        alert('id=' + id);
         var pw = document.getElementById("pw_check").value;
-        alert('pw='+pw);
+        alert('pw=' + pw);
         var repw = document.getElementById("repw_check").value;
-        alert('repw='+repw);
+        alert('repw=' + repw);
         var name = document.getElementById("name_check").value;
-        alert('name='+name);
+        alert('name=' + name);
         var birthyear = document.getElementById("birthyear_check").value;
-        alert('birthyear='+birthyear);
+        alert('birthyear=' + birthyear);
         var birthday = document.getElementById("birthday_check").value;
-        alert('birthday='+birthday);
+        alert('birthday=' + birthday);
         var hp = document.getElementById("hp_check").value;
-        alert('hp='+hp);
+        alert('hp=' + hp);
         var rehp = document.getElementById("rehp_check").value;
-        alert('rehp='+rehp);
+        alert('rehp=' + rehp);
 
         if (id == true && pw == true && repw == true && name == true && birthyear == true && birthday == true && hp == true && rehp == true) {
             flag = true;
@@ -159,13 +159,13 @@
 //    Random rd = new Random();
 //    int randomNum = rd.nextInt(9000)+1000;
 
-    MemberVO vo = (MemberVO)request.getAttribute("vo");
-    if(vo == null){
+    MemberVO vo = (MemberVO) request.getAttribute("vo");
+    if (vo == null) {
         vo.setId("");
         vo.setPw("");
         vo.setName("");
         vo.setGender("0");
-        vo.setBirth(new String[]{"","0",""});//배열로받기
+        vo.setBirth(new String[]{"", "0", ""});//배열로받기
         vo.setEmail("");
         vo.setHp("");
     }
@@ -178,7 +178,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="3"><input class="textnone" type="text" name="id" id="id" placeholder="아이디" value="<%=vo.getId()%>" onblur="return idessential(document.getElementById(id).value)"><br>
+            <td colspan="3"><input class="textnone" type="text" name="id" id="id" placeholder="아이디" value="<%=vo.getId()%>" onblur="return idessential(document.getElementById(id).value)" disabled="disabled"><br>
                 <span id="idempty"></span><input type="hidden" name="id_check" id="id_check" value="false"></td>
             <td class="textcenter">@naver.com</td>
         </tr>
@@ -199,35 +199,35 @@
             <td colspan="4"><input class="textnone" type="text" name="name" id="name" placeholder="이름" value="<%=vo.getName()%>" onblur="return nameessential(document.getElementById(name).value)"><br>
                 <span id="nameempty"></span><input type="hidden" name="name_check" id="name_check" value="false"></td>
         </tr>
-        <tr>
-            <td colspan="2" class="textcenter"><label for="man">남자</label><input type="radio" name="gender" id="man" value="0" <%=vo.getGender().equals("0")?"checked":""%>></td>
-            <td colspan="2" class="textcenter"><label for="woman">여자</label><input type="radio" name="gender" id="woman" value="1" <%=vo.getGender().equals("1")?"checked":""%>></td>
-        </tr>
+        <%--<tr>--%>
+        <%--<td colspan="2" class="textcenter"><label for="man">남자</label><input type="radio" name="gender" id="man" value="0" <%=vo.getGender().equals("0")?"checked":""%>></td>--%>
+        <%--<td colspan="2" class="textcenter"><label for="woman">여자</label><input type="radio" name="gender" id="woman" value="1" <%=vo.getGender().equals("1")?"checked":""%>></td>--%>
+        <%--</tr>--%>
         <tr>
             <td class="textcenter">생일</td>
             <td><input type="text" class="textnone" name="birthyear" id="birthyear" placeholder="년(4자)" value="<%=vo.getBirth()[0]%>" onblur="return yearessential(document.getElementById(birthyear).value)"><br>
                 <span id="yearempty"></span><input type="hidden" name="birthyear_check" id="birthyear_check" value="false"></td>
             <td><select name="birthmonth" id="birthmonth">
                 <option value="0">월</option>
-                <option value="<%=vo.getBirth()[1].equals("1")?"selected":""%>">1</option>
-                <option value="<%=vo.getBirth()[1].equals("2")?"selected":""%>">2</option>
-                <option value="<%=vo.getBirth()[1].equals("3")?"selected":""%>">3</option>
-                <option value="<%=vo.getBirth()[1].equals("4")?"selected":""%>">4</option>
-                <option value="<%=vo.getBirth()[1].equals("5")?"selected":""%>">5</option>
-                <option value="<%=vo.getBirth()[1].equals("6")?"selected":""%>">6</option>
-                <option value="<%=vo.getBirth()[1].equals("7")?"selected":""%>">7</option>
-                <option value="<%=vo.getBirth()[1].equals("8")?"selected":""%>">8</option>
-                <option value="<%=vo.getBirth()[1].equals("9")?"selected":""%>">9</option>
-                <option value="<%=vo.getBirth()[1].equals("10")?"selected":""%>">10</option>
-                <option value="<%=vo.getBirth()[1].equals("11")?"selected":""%>">11</option>
-                <option value="<%=vo.getBirth()[1].equals("12")?"selected":""%>">12</option>
+                <option value="1" <%=vo.getBirth()[1].equals("1") ? "selected" : ""%>>1</option>
+                <option value="2" <%=vo.getBirth()[1].equals("2") ? "selected" : ""%>>2</option>
+                <option value="3" <%=vo.getBirth()[1].equals("3") ? "selected" : ""%>>3</option>
+                <option value="4" <%=vo.getBirth()[1].equals("4") ? "selected" : ""%>>4</option>
+                <option value="5" <%=vo.getBirth()[1].equals("5") ? "selected" : ""%>>5</option>
+                <option value="6" <%=vo.getBirth()[1].equals("6") ? "selected" : ""%>>6</option>
+                <option value="7" <%=vo.getBirth()[1].equals("7") ? "selected" : ""%>>7</option>
+                <option value="8" <%=vo.getBirth()[1].equals("8") ? "selected" : ""%>>8</option>
+                <option value="9" <%=vo.getBirth()[1].equals("9") ? "selected" : ""%>>9</option>
+                <option value="10" <%=vo.getBirth()[1].equals("10") ? "selected" : ""%>>10</option>
+                <option value="11" <%=vo.getBirth()[1].equals("11") ? "selected" : ""%>>11</option>
+                <option value="12" <%=vo.getBirth()[1].equals("12") ? "selected" : ""%>>12</option>
             </select></td>
             <td width="150"><input class="textnone" type="text" name="birthday" id="birthday" placeholder="일" value="<%=vo.getBirth()[2]%>" onblur="return dayessential(document.getElementById(birthday).value)"><br>
                 <span id="dayempty"></span><input type="hidden" name="birthday_check" id="birthday_check" value="false">
             </td>
         </tr>
         <tr>
-            <td colspan="4"><input class="textnone" type="text" name="email" id="email" placeholder="본인확인 이메일(선택)" value=""></td>
+            <td colspan="4"><input class="textnone" type="text" name="email" id="email" placeholder="본인확인 이메일(선택)" value="<%=vo.getEmail()%>"></td>
         </tr>
         <tr>
             <td class="textnone"></td>
@@ -236,7 +236,7 @@
             <td><select>
                 <option value="0">+82</option>
             </select></td>
-            <td colspan="2"><input class="textnone" type="text" name="hp" id="hp" placeholder="휴대전화번호" value="" onblur="return hpessential(document.getElementById(hp).value)"><br>
+            <td colspan="2"><input class="textnone" type="text" name="hp" id="hp" placeholder="휴대전화번호" value="<%=vo.getHp()%>" onblur="return hpessential(document.getElementById(hp).value)"><br>
                 <span id="hpempty"></span><input type="hidden" name="hp_check" id="hp_check" value="false"></td>
             <td class="textcenter">
                 <button onclick="return hp_confirm()">인증</button>
@@ -248,11 +248,9 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4" style="border: none">
-                <center>
-                    <input type="submit" value="회원정보 수정하기" onclick="return final_check()">
-                    <button onclick="return final_check()">수정버튼</button>
-                </center>
+            <td colspan="4" align="center" style="border: none">
+                <input type="submit" value="회원정보 수정하기" onclick="return final_check()">
+                <input type="submit" name="edit_cancel" id="edit_cancel" value="취소">
             </td>
         </tr>
     </table>

@@ -1,4 +1,7 @@
-package ppNaver;
+package kr.co.pp.controller;
+
+import kr.co.pp.dao.MemberDAO;
+import kr.co.pp.vo.MemberVO;
 
 import java.io.IOException;
 import java.util.ArrayList;

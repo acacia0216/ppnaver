@@ -6,15 +6,24 @@
     <display-name>Apache-Axis</display-name>
 
 
+    <!--<servlet>-->
+        <!--<servlet-name>controller</servlet-name>-->
+        <!--<servlet-class>kr.co.pp.controller.MainControlPage</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>controller</servlet-name>-->
+        <!--<url-pattern>/controller</url-pattern>-->
+    <!--</servlet-mapping>-->
+
     <servlet>
-        <servlet-name>controller</servlet-name>
-        <servlet-class>ppNaver.MainControlPage</servlet-class>
+        <servlet-name>handler</servlet-name>
+        <servlet-class>kr.co.pp.controller.HandlerController</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>controller</servlet-name>
-        <url-pattern>/controller</url-pattern>
+        <servlet-name>handler</servlet-name>
+        <url-pattern>*.do</url-pattern>
     </servlet-mapping>
-
 
 
     <servlet>

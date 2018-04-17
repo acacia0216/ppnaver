@@ -1,4 +1,4 @@
-package ppNaver;
+package kr.co.pp.vo;
 
 public class MemberVO {
 	private String id;
