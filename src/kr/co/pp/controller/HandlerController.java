@@ -30,13 +30,9 @@ public class HandlerController extends HttpServlet {
             while((line = br.readLine()) != null){
                 System.out.println(line);
                 String[] temp = line.split("=");
-                System.out.println("트라이1번");
                 Object obj = Class.forName(temp[1]).newInstance();//벨류값으로 객체생성
-                System.out.println("트라이2번");
                 Command cmd = (Command)obj;//객체화 된 클래스가 저장되나?
-                System.out.println("트라이3번");
                 map.put(temp[0], cmd);//키&벨류 형태로 맵에 저장
-                System.out.println("트라이4번");
             }
             System.out.println("try끝");
         } catch (FileNotFoundException e) {
@@ -75,6 +71,7 @@ public class HandlerController extends HttpServlet {
         Command cmd = map.get(url);//맵에서 url(*.jsp)을 읽어서 cmd에 넣기(cmd에는 객체가 저장되나?)
 
         String toUrl = cmd.process(req);//cmd(클래스(*.java))의 process메소드에 req 넣어서 호출
+
         RequestDispatcher rd = req.getRequestDispatcher(toUrl);
         rd.forward(req,resp);
 

@@ -31,128 +31,128 @@
         color: red;
     }
 </style>
-<script>
-    function idessential(val) { //아이디필수
-        var flag = false;
-        if (val == "" || val == null) {
-            document.getElementById("idempty").innerHTML = "필수 정보입니다.";
-        } else if (val != null) {
-            if (val.equals("admin")) {
-                document.getElementById("idempty").innerHTML = "이미 사용중이거나 탈퇴한 아이디입니다."
+<%--<script>--%>
+    <%--function idessential(val) { //아이디필수--%>
+        <%--var flag = false;--%>
+        <%--if (val == "" || val == null) {--%>
+            <%--document.getElementById("idempty").innerHTML = "필수 정보입니다.";--%>
+        <%--} else if (val != null) {--%>
+            <%--if (val.equals("admin")) {--%>
+                <%--document.getElementById("idempty").innerHTML = "이미 사용중이거나 탈퇴한 아이디입니다."--%>
 
-            } else {
-                document.getElementById("idempty").innerHTML = "사용가능한 아이디입니다."
-                flag = true;
-            }
-        }
-        return flag;
-    }
+            <%--} else {--%>
+                <%--document.getElementById("idempty").innerHTML = "사용가능한 아이디입니다."--%>
+                <%--flag = true;--%>
+            <%--}--%>
+        <%--}--%>
+        <%--return flag;--%>
+    <%--}--%>
 
-    function pwessential(val) { //비밀번호 필수
-        var flag = false;
-        if (val == "" || val == null) {
-            document.getElementById("pwempty").innerHTML = "필수 정보입니다.";
-        } else {
-            flag = true;
-        }
-        return flag;
-    }
+    <%--function pwessential(val) { //비밀번호 필수--%>
+        <%--var flag = false;--%>
+        <%--if (val == "" || val == null) {--%>
+            <%--document.getElementById("pwempty").innerHTML = "필수 정보입니다.";--%>
+        <%--} else {--%>
+            <%--flag = true;--%>
+        <%--}--%>
+        <%--return flag;--%>
+    <%--}--%>
 
-    function repwessential(val) { //비밀번호 확인 필수
-        var flag = false;
-        if (val == "" || val == null) {
-            document.getElementById("repwempty").innerHTML = "필수 정보입니다.";
-        } else {
-            flag = true;
-        }
-        return flag;
-    }
+    <%--function repwessential(val) { //비밀번호 확인 필수--%>
+        <%--var flag = false;--%>
+        <%--if (val == "" || val == null) {--%>
+            <%--document.getElementById("repwempty").innerHTML = "필수 정보입니다.";--%>
+        <%--} else {--%>
+            <%--flag = true;--%>
+        <%--}--%>
+        <%--return flag;--%>
+    <%--}--%>
 
-    function nameessential(val) { //이름 필수
-        var flag = false;
-        if (val == "" || val == null) {
-            document.getElementById("nameempty").innerHTML = "필수 정보입니다.";
-        } else {
-            flag = true;
-        }
-        return flag;
-    }
+    <%--function nameessential(val) { //이름 필수--%>
+        <%--var flag = false;--%>
+        <%--if (val == "" || val == null) {--%>
+            <%--document.getElementById("nameempty").innerHTML = "필수 정보입니다.";--%>
+        <%--} else {--%>
+            <%--flag = true;--%>
+        <%--}--%>
+        <%--return flag;--%>
+    <%--}--%>
 
-    function yearessential(val) { //연도 필수
-        var flag = false;
-        if (val == "" || val == null) {
-            document.getElementById("yearempty").innerHTML = "필수 정보입니다.";
-        } else if (val.length < 4) {
-            document.getElementById("yearempty").innerHTML = "태어난 년도 4자리를 정확하게 입력하세요."
-        } else {
-            flag = true;
-        }
-        return flag;
-    }
+    <%--function yearessential(val) { //연도 필수--%>
+        <%--var flag = false;--%>
+        <%--if (val == "" || val == null) {--%>
+            <%--document.getElementById("yearempty").innerHTML = "필수 정보입니다.";--%>
+        <%--} else if (val.length < 4) {--%>
+            <%--document.getElementById("yearempty").innerHTML = "태어난 년도 4자리를 정확하게 입력하세요."--%>
+        <%--} else {--%>
+            <%--flag = true;--%>
+        <%--}--%>
+        <%--return flag;--%>
+    <%--}--%>
 
-    function dayessential(val) { //생일 필수
-        var flag = false;
-        if (val == "" || val == null) {
-            document.getElementById("dayempty").innerHTML = "필수 정보입니다.";
-        } else {
-            flag = true;
-        }
-        return flag;
-    }
+    <%--function dayessential(val) { //생일 필수--%>
+        <%--var flag = false;--%>
+        <%--if (val == "" || val == null) {--%>
+            <%--document.getElementById("dayempty").innerHTML = "필수 정보입니다.";--%>
+        <%--} else {--%>
+            <%--flag = true;--%>
+        <%--}--%>
+        <%--return flag;--%>
+    <%--}--%>
 
-    function hpessential(val) { //전화번호 필수
-        var flag = false;
-        if (val == "" || val == null) {
-            document.getElementById("hpempty").innerHTML = "필수 정보입니다.";
-        } else {
-            flag = true;
-        }
-        return flag;
-    }
+    <%--function hpessential(val) { //전화번호 필수--%>
+        <%--var flag = false;--%>
+        <%--if (val == "" || val == null) {--%>
+            <%--document.getElementById("hpempty").innerHTML = "필수 정보입니다.";--%>
+        <%--} else {--%>
+            <%--flag = true;--%>
+        <%--}--%>
+        <%--return flag;--%>
+    <%--}--%>
 
-    function rehpessential(val) { //인증 필수
-        var flag = false;
-        if (val == "" || val == null) {
-            document.getElementById("rehpempty").innerHTML = "필수 정보입니다.";
-        } else if (val.equals("1234")) {
-            document.getElementById("rehpempty").innerHTML = "인증번호를 다시 확인해주세요."
-        } else {
-            flag = true;
-        }
-        return flag;
-    }
+    <%--function rehpessential(val) { //인증 필수--%>
+        <%--var flag = false;--%>
+        <%--if (val == "" || val == null) {--%>
+            <%--document.getElementById("rehpempty").innerHTML = "필수 정보입니다.";--%>
+        <%--} else if (val.equals("1234")) {--%>
+            <%--document.getElementById("rehpempty").innerHTML = "인증번호를 다시 확인해주세요."--%>
+        <%--} else {--%>
+            <%--flag = true;--%>
+        <%--}--%>
+        <%--return flag;--%>
+    <%--}--%>
 
-    function hp_confirm() {
-        alert("인증번호 4자리를 입력해주세요");
-        return false;
-    }
+    <%--function hp_confirm() {--%>
+        <%--alert("인증번호 4자리를 입력해주세요");--%>
+        <%--return false;--%>
+    <%--}--%>
 
-    function final_check() {
-        var flag = false;
+    <%--function final_check() {--%>
+        <%--var flag = false;--%>
 
-        var id = document.getElementById("id_check").value;
-        alert('id=' + id);
-        var pw = document.getElementById("pw_check").value;
-        alert('pw=' + pw);
-        var repw = document.getElementById("repw_check").value;
-        alert('repw=' + repw);
-        var name = document.getElementById("name_check").value;
-        alert('name=' + name);
-        var birthyear = document.getElementById("birthyear_check").value;
-        alert('birthyear=' + birthyear);
-        var birthday = document.getElementById("birthday_check").value;
-        alert('birthday=' + birthday);
-        var hp = document.getElementById("hp_check").value;
-        alert('hp=' + hp);
-        var rehp = document.getElementById("rehp_check").value;
-        alert('rehp=' + rehp);
+        <%--var id = document.getElementById("id_check").value;--%>
+        <%--alert('id=' + id);--%>
+        <%--var pw = document.getElementById("pw_check").value;--%>
+        <%--alert('pw=' + pw);--%>
+        <%--var repw = document.getElementById("repw_check").value;--%>
+        <%--alert('repw=' + repw);--%>
+        <%--var name = document.getElementById("name_check").value;--%>
+        <%--alert('name=' + name);--%>
+        <%--var birthyear = document.getElementById("birthyear_check").value;--%>
+        <%--alert('birthyear=' + birthyear);--%>
+        <%--var birthday = document.getElementById("birthday_check").value;--%>
+        <%--alert('birthday=' + birthday);--%>
+        <%--var hp = document.getElementById("hp_check").value;--%>
+        <%--alert('hp=' + hp);--%>
+        <%--var rehp = document.getElementById("rehp_check").value;--%>
+        <%--alert('rehp=' + rehp);--%>
 
-        if (id == true && pw == true && repw == true && name == true && birthyear == true && birthday == true && hp == true && rehp == true) {
-            flag = true;
-        }
-        return flag;
-    }
-</script>
+        <%--if (id == true && pw == true && repw == true && name == true && birthyear == true && birthday == true && hp == true && rehp == true) {--%>
+            <%--flag = true;--%>
+        <%--}--%>
+        <%--return flag;--%>
+    <%--}--%>
+<%--</script>--%>
 <body>
 <%
     //회원정보 가져오기
@@ -170,7 +170,7 @@
         vo.setHp("");
     }
 %>
-<form action="./controller?cmd=edit_member" method="post">
+<form action="./edit3.do" method="post">
     <table align="center">
         <tr>
             <td colspan="4" class="textcenter" style="border: none">
@@ -178,7 +178,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="3"><input class="textnone" type="text" name="id" id="id" placeholder="아이디" value="<%=vo.getId()%>" onblur="return idessential(document.getElementById(id).value)" disabled="disabled"><br>
+            <td colspan="3"><input class="textnone" type="text" name="id" id="id" placeholder="아이디" value="<%=vo.getId()%>" onblur="return idessential(document.getElementById(id).value)" readonly="readonly"><br>
                 <span id="idempty"></span><input type="hidden" name="id_check" id="id_check" value="false"></td>
             <td class="textcenter">@naver.com</td>
         </tr>

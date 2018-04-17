@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1 align="center">회원정보 수정</h1>
-<form action="./controller?cmd=edit_member_page" method="post">
+<form action="./edit2.do" method="post">
     수정할 아이디 : <input type="text" name="id"><br>
     <input type="submit" value="회원정보 수정">
 </form>

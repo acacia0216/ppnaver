@@ -70,24 +70,38 @@ public class MemberDAO {
         Connection con = mgr.getConnection();
         PreparedStatement pstmt = null;
         System.out.println("DAO 업데이트 들어옴");
-        String sql = "update NAVER_MEMBER_TBL set USER_ID=?,USER_PW=?,USER_NAME=?,USER_GENDER=?,USER_BIRTH=?,USER_EMAIL=?,USER_HP=? where USER_ID='"+vo.getId()+"'";
+        System.out.println("DAO에 들어온 수정할 아이디정보 ="+vo.getId());
+        String sql = "update NAVER_MEMBER_TBL set USER_ID=?,USER_PW=?,USER_NAME=?,USER_BIRTH=?,USER_EMAIL=?,USER_HP=? where USER_ID='"+vo.getId()+"'";
         try {
             pstmt = con.prepareStatement(sql);
-
+            System.out.println(sql);
             //회원정보 업데이트
-            pstmt.setString(1,vo.getId());
-            pstmt.setString(2,vo.getPw());
-            pstmt.setString(3,vo.getName());
-            pstmt.setString(4,vo.getGender());
-            String temp[] = vo.getBirth();
-            String birth = temp[0]+"-"+temp[1]+"-"+temp[2];
-            pstmt.setString(5,birth);
-            pstmt.setString(6,vo.getEmail());
-            pstmt.setString(7,vo.getHp());
+            System.out.println("DAO업데이트 시작");
+            System.out.println(vo.getId());
 
+            pstmt.setString(1,vo.getId());
+            System.out.println(vo.getId());
+            pstmt.setString(2,vo.getPw());
+            System.out.println(vo.getPw());
+            pstmt.setString(3,vo.getName());
+            System.out.println(vo.getName());
+            pstmt.setString(5,vo.getEmail());
+            System.out.println(vo.getEmail());
+            pstmt.setString(6,vo.getHp());
+            System.out.println(vo.getHp());
+            String temp[] = vo.getBirth();
+            System.out.println(vo.getBirth());
+            String birth = temp[0]+"-"+temp[1]+"-"+temp[2];
+            pstmt.setString(4,birth);
+            System.out.println(vo.getBirth());
+            int c = pstmt.executeUpdate();
+            if(c>0) {
+                System.out.println("회원정보 수정 성공");
+            }
             System.out.println("DAO 업데이트 쿼리 보냄(업데이트 완료)");
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("cat");
         }finally {
             mgr.connectionClose(null,pstmt,con);
         }

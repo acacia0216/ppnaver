@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1 align="center">회원 탈퇴</h1>
-<form action="./controller?cmd=delete" method="post">
+<form action="./delete2.do" method="post">
     삭제할 아이디 : <input type="text" name="id"><br>
     <input type="submit" value="아이디 삭제">
 </form>

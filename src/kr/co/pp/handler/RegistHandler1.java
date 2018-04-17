@@ -4,10 +4,10 @@ import kr.co.pp.controller.Command;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class DeleteHandler implements Command {
-
+public class RegistHandler1 implements Command {
     @Override
     public String process(HttpServletRequest request) {
-        return null;
+        String url = "./Naver_regist.jsp";
+        return url;
     }
 }

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
-public class RegistHandler implements Command {
+public class RegistHandler2 implements Command {
     public String process(HttpServletRequest req) {
         try {
             req.setCharacterEncoding("UTF-8");
@@ -50,7 +50,7 @@ public class RegistHandler implements Command {
                 System.out.println("회원정보가 넘어오지 못함");
                 url = "./error.jsp";
             }
-            url = "./home.jsp";
+            url = "./home.do";
         }
 
         return url;
